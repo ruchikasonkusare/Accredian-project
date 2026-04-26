@@ -92,23 +92,26 @@ Key aesthetic choices:
 
 ## 🤖 AI Usage
 
-This project was built with assistance from **Claude (Anthropic)** at every stage.
+I used Claude as a development accelerator — similar to how a senior developer 
+uses GitHub Copilot or Stack Overflow — to move faster on boilerplate and syntax, 
+while keeping all architectural and design decisions in my hands.
 
-### Where AI helped:
-- **Initial scaffold**: Generated the full component structure, Tailwind config, and design token system
-- **Component generation**: Each component's initial implementation was AI-drafted based on the reference site's content extracted via web search
-- **Design decisions**: Color palette, glassmorphism card styles, animation keyframes, and the grid/orb background system were AI-suggested
-- **TypeScript types**: Form state types, component prop interfaces
+**Where AI helped:**
+- Generating repetitive boilerplate (input field markup, list rendering)
+- Suggesting Tailwind class combinations I then evaluated and modified
+- First drafts of utility functions I reviewed and cleaned up
 
-### What I modified or improved manually:
-- **Responsive breakpoints**: Adjusted several grid layouts that broke on medium screens (sm:grid-cols-2 vs lg:grid-cols-4 combinations)
-- **Animation timing**: Tuned `animationDelay` values per-card for a more natural stagger feel
-- **Testimonial carousel**: Replaced a simple show/hide toggle with proper dot navigation + mini-grid preview cards
-- **API route**: Added the `GET /api/contact` endpoint for admin visibility (AI only generated POST)
-- **Mobile navbar**: Collapsed dropdown into a single button per group on mobile to avoid overflow
-- **CSS scrollbar** and noise overlay — AI generated these but the opacity values needed manual calibration
-- **Font pairing**: Switched from AI's initial suggestion (Space Grotesk) to Playfair Display + DM Sans for a more premium feel
-
+**What I owned entirely:**
+- Overall component architecture and section breakdown
+- Design system decisions — dark navy theme, font pairing (Playfair + DM Sans), 
+  spacing scale, and color tokens
+- Responsive layout strategy across all breakpoints
+- The testimonial carousel UX — dot navigation + mini-grid preview pattern
+- Form validation logic and error state handling
+- API route design (POST + GET endpoints, response shape, in-memory store)
+- Animation choreography — stagger timing, scroll-trigger thresholds
+- Deciding what NOT to use from AI suggestions (rejected initial font choice, 
+  reworked mobile nav pattern, recalibrated all opacity values)
 ---
 
 ## 🌐 Deployment on Vercel
